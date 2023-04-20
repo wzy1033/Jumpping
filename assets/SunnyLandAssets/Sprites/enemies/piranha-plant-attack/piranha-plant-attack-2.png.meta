@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "614d03d0-fefb-49f0-800b-69f4e2e0f3b0",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 61,
+  "height": 45,
+  "platformSettings": {},
+  "subMetas": {
+    "piranha-plant-attack-2": {
+      "ver": "1.0.6",
+      "uuid": "51e8b7d3-bce9-486f-b6fc-db91ab9c3ab7",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "614d03d0-fefb-49f0-800b-69f4e2e0f3b0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1.5,
+      "offsetY": -5.5,
+      "trimX": 21,
+      "trimY": 11,
+      "width": 22,
+      "height": 34,
+      "rawWidth": 61,
+      "rawHeight": 45,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

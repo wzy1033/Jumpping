@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "831c5eb1-e3ac-40d7-97e7-81acf25a5173",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 61,
+  "height": 45,
+  "platformSettings": {},
+  "subMetas": {
+    "piranha-plant-2": {
+      "ver": "1.0.6",
+      "uuid": "f8687215-be0b-4917-981e-00e21b1235f5",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "831c5eb1-e3ac-40d7-97e7-81acf25a5173",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1.5,
+      "offsetY": -5.5,
+      "trimX": 21,
+      "trimY": 11,
+      "width": 22,
+      "height": 34,
+      "rawWidth": 61,
+      "rawHeight": 45,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
