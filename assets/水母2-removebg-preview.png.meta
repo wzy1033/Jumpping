@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "ba24186a-67c8-4d3a-8ede-ad8e9a85e377",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 375,
+  "height": 666,
+  "platformSettings": {},
+  "subMetas": {
+    "水母2-removebg-preview": {
+      "ver": "1.0.6",
+      "uuid": "e113ee15-928d-43e3-a4b0-00814af46fdd",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "ba24186a-67c8-4d3a-8ede-ad8e9a85e377",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -96,
+      "offsetY": 96,
+      "trimX": 40,
+      "trimY": 184,
+      "width": 103,
+      "height": 106,
+      "rawWidth": 375,
+      "rawHeight": 666,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
