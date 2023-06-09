@@ -19,5 +19,8 @@ export default class PlatfromScript extends cc.Component {
 		if(this.node.position.y<0){
 			this.destroy();
 		}
+        let targetPosition = this.node.position;
+        targetPosition.y -= 25 * dt;
+        this.node.position = targetPosition;
 	}
 }

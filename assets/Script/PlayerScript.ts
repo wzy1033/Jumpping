@@ -1,3 +1,4 @@
+import CanvasScript from "./CanvasScript";
 import Canvas from "./CanvasScript";
 
 const { ccclass, property } = cc._decorator;
@@ -12,6 +13,12 @@ export default class PlayerScript extends cc.Component {
 
     @property(cc.Sprite)
     health: cc.Sprite;
+
+    @property(cc.Prefab)
+    platformPre: cc.Prefab;
+
+    @property(cc.Node)
+    cas: cc.Node = null;
 
     //血量相关
     blood: number = 3;
@@ -36,17 +43,21 @@ export default class PlayerScript extends cc.Component {
         if (this.isPlayingHurtAnimation() != true) {
             this.playJumpAnimation();
         }
-        if (this.node.position.y <= 100) {
-            this.node.destroy();
-            cc.director.loadScene("RestartScene");
-        }
+        this.gameOverDetection();
     }
 
     //检测是否死亡
     gameOverDetection() {
-        if (this.node.position.y <= 100 ) {
+        let canvasnode = cc.find("Canvas");
+        let canvasScript = canvasnode.getComponent("CanvasScript");
+        let height = canvasScript.height;
+
+        if (this.node.position.y <= 50 ) {
             this.node.destroy();
-            cc.director.loadScene("RestartScene");
+            cc.director.loadScene("RestartScene",()=>{
+                let restartCanvas = cc.find("Canvas").getComponent("RestartCanvasScript");
+                restartCanvas.height = height;
+            });
         }
     }
 
@@ -110,16 +121,22 @@ export default class PlayerScript extends cc.Component {
         let uprightAction = cc.moveTo(0.5, upRightPos).easing(cc.easeSineOut()); // 使用 moveTo 动作将人物移动到指定位置
         let endAciton = cc.moveTo(0.80, endPos).easing(cc.easeSineIn());
 
-
-        // this.node.runAction(cc.sequence(uprightAction, endAciton));
         this.node.runAction(uprightAction);
     }
 
     //跳跃，获取刚体，给刚体一个向上的linearVelocity
     jump() {
-
         let rbody = this.getComponent(cc.RigidBody);
         rbody.linearVelocity = cc.v2(0, this.jumpSpeed);
+
+
+        let platform = cc.instantiate(this.platformPre);
+        let sceneRoot = cc.director.getScene();
+        let allNode = sceneRoot.getChildByName("All");
+        //设置位置
+        platform.y = this.node.y + 250;
+        platform.x = Math.random() * 160 - 70;
+        platform.setParent(allNode);
     }
 
     //切换跳跃动画
@@ -172,20 +189,7 @@ export default class PlayerScript extends cc.Component {
         this.node.opacity = this.originalOpacity; // 恢复角色原始的透明度
     }
 
-    //手指移动
-    // move(event) {
-    //     const delta = event.getDelta();
-    //     let ani = this.getComponent(cc.Animation);
-    //     let pos = new cc.Vec2(this.node.position.x + this.speed * delta.x, this.node.position.y);
 
-    //     if (delta.x < 0) {
-    //         this.node.scaleX = -2;
-    //     } else {
-    //         this.node.scaleX = 2;
-    //     }
-    //     this.node.setPosition(pos);
-    // this.node.on(cc.Node.EventType.TOUCH_MOVE, this.move, this);
-    // }
 
 
 }
